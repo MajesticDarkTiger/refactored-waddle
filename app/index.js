@@ -51,3 +51,28 @@ const user = {
 
 // const total = add2Numbers(2, 4);
 // console.log(total);
+
+function calculateTotal(price, quantity) {
+  return price * quantity;
+}
+
+// const total = calculateTotal(599.99, 20);
+
+// console.log(total.toFixed(2));
+
+// for (let i = 1; i <= 10; i++) {
+//   console.log(i);
+// }
+
+// for (let i = 0; i < catalog.length; i++) {
+//   console.log(catalog[i].item);
+// }
+let catalogTotal = 0;
+
+for (let i = 0; i < catalog.length; i++) {
+  const price = catalog[i].price;
+  const quantity = catalog[i].quantity;
+  catalogTotal += calculateTotal(price, quantity);
+}
+
+console.log(catalogTotal);
