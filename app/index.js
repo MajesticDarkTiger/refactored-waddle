@@ -1,3 +1,7 @@
+// import 'v4' from 'uuid' and assign it to a variable called 'uuid4' nonsense tbh
+import { v4 as uuid4 } from "uuid";
+import { sayHello } from "./util.js";
+
 const catalog = [
   {
     id: "1",
@@ -59,6 +63,10 @@ const user = {
 function calculateTotal(price, quantity) {
   return price * quantity;
 }
+// rewrite with arrow function idk what we doin'
+// const calculateTotal = (price, quantity) => {return price * quantity}
+// or
+// const calculateTotal = (price, quantity) => price * quantity;
 
 // const total = calculateTotal(599.99, 20);
 
@@ -81,10 +89,44 @@ function calculateTotal(price, quantity) {
 
 // console.log(catalogTotal);
 
-const itemsThatStartWithTheLetterA = catalog.filter(function (
-  currentCatalogItem
-) {
-  return currentCatalogItem.item.startsWith("a");
-});
+// const itemsThatStartWithTheLetterA = catalog.filter(function (
+//   currentCatalogItem
+// ) {
+//   return currentCatalogItem.item.startsWith("a");
+// });
+// rewrite for arrow functions
+// const itemsThatStartWithTheLetterA = catalog.filter((currentCatalogItem) =>
+//   currentCatalogItem.item.startsWith("a")
+// );
 
-console.log(itemsThatStartWithTheLetterA, catalog);
+// console.log(itemsThatStartWithTheLetterA);
+
+// const clothingItems = catalog.filter(function (currentItem) {
+//   return currentItem.category.toLowerCase() === "clothing";
+// });
+
+// rewrite for arrow functions
+// const clothingItems = catalog.filter(
+//   (currentItem) => currentItem.category.toLowerCase() === "clothing"
+// );
+
+// console.log(itemsThatStartWithTheLetterA, clothingItems);
+
+const sayHello = (registeredUser) => `Hello, ${registeredUser.username}`;
+
+// temporal literal
+const help = (catalogItem) =>
+  `
+    <section>
+    <h2>${catalogItem.item}</h2>
+    <p>Price: $${catalogItem.price}</p>
+    <p>Quantity: ${catalogItem.quantity}</p>
+    <button> Add to Cart </button>
+    </section>
+  `;
+// const firstItemCard = help(catalog[0]);
+
+// console.log(firstItemCard);
+
+// don't need join in react :)))))
+const catalogHTMl = catalog.map(help).join("");
