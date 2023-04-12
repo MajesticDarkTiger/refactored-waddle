@@ -115,6 +115,7 @@ function calculateTotal(price, quantity) {
 const sayHello = (registeredUser) => `Hello, ${registeredUser.username}`;
 
 // temporal literal
+// for destructor {name, price, quantity}
 const help = (catalogItem) =>
   `
     <section>
@@ -130,3 +131,6 @@ const help = (catalogItem) =>
 
 // don't need join in react :)))))
 const catalogHTMl = catalog.map(help).join("");
+
+// array/object destructor
+const { username } = user;
