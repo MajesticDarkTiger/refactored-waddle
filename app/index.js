@@ -41,6 +41,10 @@ const user = {
   cart: [],
 };
 
+// const catalogTotal = catalog.reduce(function (total, currentItem) {
+//   return total + calculateTotal(currentItem.price, currentItem.quantity);
+// }, 0);
+
 // console.log(catalog, user);
 // console.log(catalog[2].price.toFixed(2));
 // toFixed(2) to get how many decimals you put in the ()
@@ -67,12 +71,20 @@ function calculateTotal(price, quantity) {
 // for (let i = 0; i < catalog.length; i++) {
 //   console.log(catalog[i].item);
 // }
-let catalogTotal = 0;
+// let catalogTotal = 0;
 
-for (let i = 0; i < catalog.length; i++) {
-  const price = catalog[i].price;
-  const quantity = catalog[i].quantity;
-  catalogTotal += calculateTotal(price, quantity);
-}
+// for (let i = 0; i < catalog.length; i++) {
+//   const price = catalog[i].price;
+//   const quantity = catalog[i].quantity;
+//   catalogTotal += calculateTotal(price, quantity);
+// }
 
-console.log(catalogTotal);
+// console.log(catalogTotal);
+
+const itemsThatStartWithTheLetterA = catalog.filter(function (
+  currentCatalogItem
+) {
+  return currentCatalogItem.item.startsWith("a");
+});
+
+console.log(itemsThatStartWithTheLetterA, catalog);
